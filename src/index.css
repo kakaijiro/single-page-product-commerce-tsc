@@ -111,6 +111,12 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@layer components {
+  .align-element {
+    @apply mx-auto max-w-6xl px-8;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
