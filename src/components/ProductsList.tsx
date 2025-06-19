@@ -17,7 +17,7 @@ function ProductsList() {
                 <img
                   src={image}
                   alt={title}
-                  className="h-64 w-full rounded-md object-cover md:h-48 md:w-48"
+                  className="h-64 w-full transform rounded-md object-cover transition-transform duration-300 ease-out hover:scale-105 md:h-48 md:w-48"
                 />
                 <div>
                   <h2 className="text-xl font-semibold capitalize">{title}</h2>
