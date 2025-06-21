@@ -1,15 +1,55 @@
-# React + TypeScript + Vite
+# Comfy Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern e-commerce demo built with React, TypeScript, and Vite. This project demonstrates a clean architecture, state management, and UI best practices for a shopping experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Product listing with grid and list views
+- Product filters (search, category, price, company, shipping)
+- Shopping cart with add/remove/update functionality
+- User authentication (login/register UI)
+- Order summary and checkout page (UI only)
+- Responsive design with Tailwind CSS
+- Theme toggle (light/dark mode)
+- Carousel hero section
+- Pagination for product lists
+- Error handling and loading states
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```
+src/
+  components/         # Reusable UI components
+  features/           # Redux slices for cart, theme, user
+  lib/                # Utility functions
+  pages/              # Page components (Home, Products, Cart, etc.)
+  utils/              # Helper utilities (fetch, formatting, types)
+  assets/             # Images and static assets
+```
+
+## Getting Started
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+3. **Open in browser:**
+   Visit [http://localhost:5173](http://localhost:5173)
+
+## Scripts
+
+- `npm run dev` — Start development server
+- `npm run build` — Build for production
+- `npm run preview` — Preview production build
+- `npm run lint` — Run ESLint
+
+## ESLint & TypeScript
+
+This project uses ESLint with recommended and type-aware rules. See `eslint.config.js` for details. You can expand the configuration as needed:
 
 ```js
 export default tseslint.config({
@@ -31,24 +71,8 @@ export default tseslint.config({
 })
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Feel free to customize and extend this project for your own needs!
