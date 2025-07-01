@@ -27,7 +27,7 @@ function SelectProductAmount({
   mode,
   amount,
   setAmount,
-}: SelectProductAmountProps) {
+}: SelectProductAmountProps | SelectCartItemAmountProps) {
   const cartItem = mode === Mode.CartItem;
 
   return (
