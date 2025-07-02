@@ -14,7 +14,13 @@ function FormInput({ label, name, type, defaultValue }: FormInputProps) {
       <Label htmlFor={name} className="capitalize">
         {label || name}
       </Label>
-      <Input id={name} name={name} type={type} defaultValue={defaultValue} />
+      <Input
+        id={name}
+        name={name}
+        type={type}
+        defaultValue={defaultValue}
+        className="bg-white"
+      />
     </div>
   );
 }
