@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
-import { useState } from "react";
 import { logoutUser } from "@/features/user/userSlice";
 import { clearCart } from "@/features/cart/cartSlice";
 import { toast } from "sonner";

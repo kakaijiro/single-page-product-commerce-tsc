@@ -1,7 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { type CartItem, type CartState } from "@/utils";
 import { toast } from "sonner";
-import { redirect } from "react-router-dom";
 
 const defaultState: CartState = {
   cartItems: [],
