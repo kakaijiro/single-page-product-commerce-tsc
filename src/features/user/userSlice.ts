@@ -31,14 +31,14 @@ const userSlice = createSlice({
 
       // demo user
       if (user.username === "demo user") {
-        toast("Welcom Gust User", {
+        toast.success("Welcom Gust User", {
           description: ``,
         });
         return;
       }
 
       // general user
-      toast("Login successfully", {
+      toast.success("Login successfully", {
         description: ``,
         // action: {
         //   label: "Go to cart",

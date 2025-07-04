@@ -15,7 +15,7 @@ export const action: ActionFunction = async ({
     // await new Promise((resolve) => setTimeout(resolve, 2000));
     const result = await customFetch.post("/auth/local/register", data);
     console.log(result);
-    toast("Registered. Please login", {
+    toast.success("Registered. Please login", {
       description: ``,
     });
     return redirect("/login");
@@ -24,7 +24,7 @@ export const action: ActionFunction = async ({
       error instanceof AxiosError
         ? error.response?.data.error.message
         : "Registration Failed";
-    toast("Registration Failed", {
+    toast.error("Registration Failed", {
       description: errorMsg,
     });
     return null;
@@ -46,7 +46,7 @@ function Register() {
             <FormInput type="password" name="password" />
             <SubmitBtn text="Submit" className="mt-4 w-full" />
             <p className="mt-4 text-center">
-              Already a member?{" "}
+              Already a member?
               <Button type="button" asChild variant="link">
                 <Link to="/login">Login</Link>
               </Button>

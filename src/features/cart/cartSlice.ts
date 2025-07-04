@@ -1,6 +1,7 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { type CartItem, type CartState } from "@/utils";
 import { toast } from "sonner";
+import { redirect } from "react-router-dom";
 
 const defaultState: CartState = {
   cartItems: [],
@@ -34,12 +35,12 @@ const cartSlice = createSlice({
       // state.orderTotal = state.cartTotal + state.shipping + state.tax;
       // localStorage.setItem("cart", JSON.stringify(state));
       cartSlice.caseReducers.calculateTotals(state);
-      toast("Item added to cart", {
+      toast.success("Item added to cart", {
         description: ``,
-        action: {
-          label: "Go to cart",
-          onClick: () => {},
-        },
+        // action: {
+        //   label: "Go to cart",
+        //   onClick: () => {},
+        // }, // use navigate() in an ui component
       });
     },
     clearCart: () => {
@@ -54,12 +55,12 @@ const cartSlice = createSlice({
       state.numItemsInCart -= cartItem.amount;
       state.cartTotal -= Number(cartItem.price) * cartItem.amount;
       cartSlice.caseReducers.calculateTotals(state);
-      toast("Item removed from the cart", {
+      toast.success("Item removed from the cart", {
         description: ``,
-        action: {
-          label: "Go to cart",
-          onClick: () => {},
-        },
+        // action: {
+        //   label: "Go to cart",
+        //   onClick: () => {},
+        // }, // use navigate() in an ui component
       });
     },
     editItem: (
@@ -73,12 +74,12 @@ const cartSlice = createSlice({
       state.cartTotal += Number(cartItem.price) * (amount - cartItem.amount);
       cartItem.amount = amount;
       cartSlice.caseReducers.calculateTotals(state);
-      toast("Amount updated", {
+      toast.success("Amount updated", {
         description: ``,
-        action: {
-          label: "Go to cart",
-          onClick: () => {},
-        },
+        // action: {
+        //   label: "Go to cart",
+        //   onClick: () => {},
+        // }, // use navigate() in an ui component
       });
     },
     calculateTotals: (state) => {

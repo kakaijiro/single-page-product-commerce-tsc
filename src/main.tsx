@@ -7,7 +7,13 @@ import { Toaster } from "sonner";
 
 createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
-    <Toaster />
+    <Toaster
+      toastOptions={{
+        style: {
+          background: "#d3f9d8",
+        },
+      }}
+    />
     <App />
   </Provider>,
 );
