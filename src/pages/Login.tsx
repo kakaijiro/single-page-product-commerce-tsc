@@ -4,6 +4,7 @@ import {
   redirect,
   type ActionFunction,
   useNavigate,
+  useLocation,
 } from "react-router-dom";
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -14,6 +15,7 @@ import { type ReduxStore } from "@/store";
 import { loginUser } from "@/features/user/userSlice";
 import { useAppDispatch } from "@/hooks";
 import { type AxiosResponse } from "axios";
+import { useEffect } from "react";
 
 export const action =
   (store: ReduxStore): ActionFunction =>
@@ -41,6 +43,16 @@ export const action =
 function Login() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get("from") === "checkout") {
+      toast.error("Please login to continue", {
+        description: ``,
+      });
+    }
+  }, [location]);
 
   const loginAsGuestUser = async (): Promise<void> => {
     try {
