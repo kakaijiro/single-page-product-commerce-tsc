@@ -14,7 +14,7 @@ export const action =
     const address = formData.get("address") as string;
 
     if (!name || !address) {
-      toast.error("Please fill ou all fields", {
+      toast.error("Please fill out all fields", {
         description: ``,
       });
       // [NOTE] toast should not be called via action function because action function usually invokes outside rerendering. this case is exceptional where no redirection, returning null and using sonner
