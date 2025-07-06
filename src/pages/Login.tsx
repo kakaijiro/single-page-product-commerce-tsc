@@ -47,7 +47,7 @@ function Login() {
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    if (params.get("from") === "checkout") {
+    if (params.get("from") === "checkout" || params.get("from") === "orders") {
       toast.error("Please login to continue", {
         description: ``,
       });

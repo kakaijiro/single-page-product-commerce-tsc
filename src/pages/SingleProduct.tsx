@@ -10,7 +10,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { SelectProductAmount, SelectProductColor } from "@/components";
-import { Mode } from "@/components/SelectProductAmount";
+import { Mode } from "@/constants/mode";
 import { useAppDispatch } from "@/hooks";
 import { addItem } from "@/features/cart/cartSlice";
 

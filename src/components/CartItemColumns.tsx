@@ -3,7 +3,7 @@ import { useAppDispatch } from "@/hooks";
 import { Button } from "./ui/button";
 import { editItem, removeItem } from "@/features/cart/cartSlice";
 import SelectProductAmount from "./SelectProductAmount";
-import { Mode } from "./SelectProductAmount";
+import { Mode } from "@/constants/mode";
 
 export function FirstColumn({
   title,

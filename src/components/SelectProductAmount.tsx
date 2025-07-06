@@ -5,11 +5,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-
-export enum Mode {
-  SingleProduct = "singleProduct",
-  CartItem = "cartItem",
-}
+import { Mode } from "@/constants/mode";
 
 type SelectProductAmountProps = {
   mode: Mode.SingleProduct;
