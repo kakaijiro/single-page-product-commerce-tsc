@@ -72,3 +72,7 @@ You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-re
 ---
 
 Feel free to customize and extend this project for your own needs!
+
+---
+
+You can see the live site [here](https://jazzy-sorbet-3715c1.netlify.app/).
